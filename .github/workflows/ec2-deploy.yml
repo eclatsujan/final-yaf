@@ -24,7 +24,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: Copy Artifact to EC2
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
@@ -33,7 +33,7 @@ jobs:
           target: "/var/lib/tomcat9/webapps/"
 
       - name: SSH into EC2 and Restart Tomcat
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.4
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
