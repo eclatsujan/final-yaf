@@ -21,7 +21,7 @@ jobs:
           java-version: "21"
 
       - name: Build Spring Boot Application
-        run: ./mvnw clean package
+        run: chmod +x ./mvnw && ./mvnw clean package
 
       - name: Copy Artifact to EC2
         uses: appleboy/scp-action@master
