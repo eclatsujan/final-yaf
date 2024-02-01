@@ -23,9 +23,6 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: Build Spring Boot Application
-        run: chmod +x ./mvnw && ./mvnw clean package
-
       - name: Copy Artifact to EC2
         uses: appleboy/scp-action@master
         with:
