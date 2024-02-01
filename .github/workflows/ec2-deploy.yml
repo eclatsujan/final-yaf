@@ -20,6 +20,9 @@ jobs:
           distribution: "temurin"
           java-version: "21"
 
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
       - name: Build Spring Boot Application
         run: chmod +x ./mvnw && ./mvnw clean package
 
